@@ -36,9 +36,9 @@
 
   </style>
   <form name="f1">
-a <input type="text" value="-3.141592653589" id="x1"/>
-b <input type="text" value="0" id="x2"/>
-n <input type="text" value="10" id="x3"/>
+a <input type="text" value="1" id="x1"/>
+b <input type="text" value="3" id="x2"/>
+n <input type="text" value="11" id="x3"/>
 <br><br>
 <input type="button" value="Протабулювати" onclick="myfunc(); "></input>
 <div id="rez"></div>
@@ -47,7 +47,7 @@ n <input type="text" value="10" id="x3"/>
 function get(id){return document.getElementById(id)}
 function getVal(id){return parseFloat(get(id).value)}
 
-function y(x){return Math.cos(((Math.PI)*x)/3)+ Math.exp(1-Math.sin(x)) }
+function y(x){return Math.sqrt(Math.pow(x,2)-1)+ Math.log(2*x+3) }
 
 function myfunc(){
 var rezult = "";
@@ -69,7 +69,7 @@ var z=y(x);
 if (min === null || min > z) {min = z; kmin=x;}
 if (max === null || max < z) {max = z; kmax=x;}
 
-rezult+='<tr align=center><td width=50%>'+(x).toFixed(3);
+rezult+='<tr align=center><td width=50%>'+(x).toFixed(1);
 rezult+='<td>'+z.toFixed(4)+'</tr>';
 }
 rezult+="</table>";

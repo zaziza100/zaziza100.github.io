@@ -49,22 +49,29 @@
         {
         writeVal=document.getElementById("res");
         
-        var result = "";
+        var nepar = "", par= "";
         var str = document.getElementById('txt').value;
         var Array =str.match(/\S+/g)||[];
-		Array.sort(function(a,b){return a.length-b.length});
+		//Array.sort(function(a,b){return a.length-b.length});
         for(var i=0; i<Array.length; i++)
             {
-                
-                
-                if(Array[i].length==Array[0].length)
+                if(i%2==0)
                     {
-                        result+=Array[i]+" ";
+                        nepar+=i+1 +": "+ Array[i]+" ";
                     }
+                else
+                {
+                    par+=i+1 +": "+Array[i]+" ";
+                }
+                    
                 writeVal.innerHTML="";           
-                writeVal.innerHTML+="Entered string: "+ str+"<br>";    
-                writeVal.innerHTML +="Shortest word(-s): "+ result;
+                writeVal.innerHTML+="Непарні слова: "+ nepar+"<br>";    
+                writeVal.innerHTML +="Парні слова: "+ par;
+                
+                
+                
             }
+            
         
         
         }
